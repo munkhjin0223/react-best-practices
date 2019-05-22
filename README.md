@@ -1,4 +1,4 @@
-# react-best-practices
+# React best practices
 
 * Think in react
 * Set state
