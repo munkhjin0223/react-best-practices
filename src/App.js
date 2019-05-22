@@ -1,24 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Link } from "react-router-dom";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3>Think in react</h3>
+      <ul>
+        <li>
+          <Link to="/think-in-react">Think in react</Link>
+        </li>
+      </ul>
+      <h3>Best practices</h3>
+      <ul>
+        <li>
+          <Link to="/setstate-badcase">Set state (bad case)</Link>
+        </li>
+        <li>
+          <Link to="/setstate-goodcase">Set state (good case)</Link>
+        </li>
+      </ul>
+      <h3>Anti patterns</h3>
+      <ul>
+        <li>
+          <Link to="/mutatestate-badcase">Mutate state (bad case)</Link>
+        </li>
+        <li>
+          <Link to="/mutatestate-goodcase">Mutate state (good case)</Link>
+        </li>
+        <li>
+          <Link to="/bad-form">Form (bad case)</Link>
+        </li>
+        <li>
+          <Link to="/form">Form (Not bad case)</Link>
+        </li>
+        <li>
+          <Link to="/better-form">Form (better case)</Link>
+        </li>
+      </ul>
     </div>
   );
 }
