@@ -76,8 +76,7 @@ class ProductTable extends React.Component {
 
 class SearchBar extends React.Component {
   render() {
-    const filterText = this.props.filterText;
-    const inStockOnly = this.props.inStockOnly;
+    const { filterText, inStockOnly } = this.props;
 
     return (
       <form>
@@ -101,14 +100,12 @@ export default class FilterableProductTable extends React.Component {
   }
 
   render() {
+    const { filterText, inStockOnly } = this.state;
+
     return (
       <div>
-        <SearchBar filterText={this.state.filterText} inStockOnly={this.state.inStockOnly} />
-        <ProductTable
-          products={PRODUCTS}
-          filterText={this.state.filterText}
-          inStockOnly={this.state.inStockOnly}
-        />
+        <SearchBar filterText={this.state.filterText} inStockOnly={inStockOnly} />
+        <ProductTable products={PRODUCTS} filterText={filterText} inStockOnly={inStockOnly} />
       </div>
     );
   }
