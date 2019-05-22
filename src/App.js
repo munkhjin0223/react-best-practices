@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
@@ -8,7 +8,13 @@ function App() {
       <h3>Think in react</h3>
       <ul>
         <li>
-          <Link to="/think-in-react">Think in react</Link>
+          <Link to="/step-one">Step one</Link>
+        </li>
+        <li>
+          <Link to="/step-two">Step two</Link>
+        </li>
+        <li>
+          <Link to="/last-step">Last step</Link>
         </li>
       </ul>
       <h3>Best practices</h3>
