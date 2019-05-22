@@ -5,6 +5,7 @@ import App from './App';
 import { SetStateBadCase, SetStateGoodCase } from './best-practices/SetState';
 import { MutateStateGoodCase, MutateStateBadCase } from './anti-patterns/MutateState';
 import { Form, BadForm, BetterForm } from './anti-patterns/Form';
+import Component from './performance/Component';
 
 const routes = () => (
   <Router>
@@ -21,6 +22,8 @@ const routes = () => (
     <Route exact={true} path="/bad-form" key="/bad-form" component={BadForm} />
     <Route exact={true} path="/form" key="/form" component={Form} />
     <Route exact={true} path="/better-form" key="/better-form" component={BetterForm} />
+
+    <Route exact={true} path="/component" key="/component" component={Component} />
   </Router>
 )
 

@@ -38,6 +38,12 @@ function App() {
           <Link to="/better-form">Form (better case)</Link>
         </li>
       </ul>
+      <h3>Performance</h3>
+      <ul>
+        <li>
+          <Link to="/component">Component types</Link>
+        </li>
+      </ul>
     </div>
   );
 }
