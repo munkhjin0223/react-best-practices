@@ -1,20 +1,11 @@
 import React from "react";
-
-const PRODUCTS = [
-  { category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football" },
-  { category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball" },
-  { category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball" },
-  { category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch" },
-  { category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5" },
-  { category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7" },
-];
+import { PRODUCTS } from "./constants";
 
 class ProductCategoryRow extends React.Component {
   render() {
-    const category = this.props.category;
     return (
       <tr>
-        <th colSpan="2">{category}</th>
+        <th colSpan="2">{this.props.category}</th>
       </tr>
     );
   }
@@ -22,7 +13,7 @@ class ProductCategoryRow extends React.Component {
 
 class ProductRow extends React.Component {
   render() {
-    const product = this.props.product;
+    const { product } = this.props;
     const name = product.stocked ? (
       product.name
     ) : (
@@ -47,7 +38,9 @@ class ProductTable extends React.Component {
       if (product.category !== lastCategory) {
         rows.push(<ProductCategoryRow category={product.category} key={product.category} />);
       }
+
       rows.push(<ProductRow product={product} key={product.name} />);
+
       lastCategory = product.category;
     });
 

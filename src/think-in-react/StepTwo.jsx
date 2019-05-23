@@ -1,20 +1,11 @@
 import React from "react";
-
-const PRODUCTS = [
-  { category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football" },
-  { category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball" },
-  { category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball" },
-  { category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch" },
-  { category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5" },
-  { category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7" },
-];
+import { PRODUCTS } from "./constants";
 
 class ProductCategoryRow extends React.Component {
   render() {
-    const category = this.props.category;
     return (
       <tr>
-        <th colSpan="2">{category}</th>
+        <th colSpan="2">{this.props.category}</th>
       </tr>
     );
   }
@@ -22,7 +13,7 @@ class ProductCategoryRow extends React.Component {
 
 class ProductRow extends React.Component {
   render() {
-    const product = this.props.product;
+    const { product } = this.props;
     const name = product.stocked ? (
       product.name
     ) : (
@@ -40,13 +31,12 @@ class ProductRow extends React.Component {
 
 class ProductTable extends React.Component {
   render() {
-    const filterText = this.props.filterText;
-    const inStockOnly = this.props.inStockOnly;
+    const { filterText, inStockOnly, products } = this.props;
 
     const rows = [];
     let lastCategory = null;
 
-    this.props.products.forEach(product => {
+    products.forEach(product => {
       if (product.name.indexOf(filterText) === -1) {
         return;
       }
@@ -104,7 +94,7 @@ export default class FilterableProductTable extends React.Component {
 
     return (
       <div>
-        <SearchBar filterText={this.state.filterText} inStockOnly={inStockOnly} />
+        <SearchBar filterText={filterText} inStockOnly={inStockOnly} />
         <ProductTable products={PRODUCTS} filterText={filterText} inStockOnly={inStockOnly} />
       </div>
     );
