@@ -2,9 +2,9 @@ import * as React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import App from "./App";
-import { SetStateBadCase, SetStateGoodCase } from "./best-practices/SetState";
-import { MutateStateGoodCase, MutateStateBadCase } from "./anti-patterns/MutateState";
-import { Form, BadForm, BetterForm } from "./anti-patterns/Form";
+import SetState from "./best-practices/SetState";
+import MutateState from "./anti-patterns/MutateState";
+import Form from "./anti-patterns/Form";
 import Component from "./performance/Component";
 import PureComponentExample from "./performance/PureComponentExample";
 import BindFunction from "./best-practices/BindFunction";
@@ -20,33 +20,19 @@ const routes = () => (
 
     <Route
       exact={true}
-      path="/setstate-badcase"
-      key="/setstate-badcase"
-      component={SetStateBadCase}
-    />
-    <Route
-      exact={true}
-      path="/setstate-goodcase"
-      key="/setstate-goodcase"
-      component={SetStateGoodCase}
+      path="/setstate"
+      key="/setstate"
+      component={SetState}
     />
 
     <Route
       exact={true}
-      path="/mutatestate-badcase"
-      key="/mutatestate-badcase"
-      component={MutateStateBadCase}
-    />
-    <Route
-      exact={true}
-      path="/mutatestate-goodcase"
-      key="/mutatestate-goodcase"
-      component={MutateStateGoodCase}
+      path="/mutatestate"
+      key="/mutatestate"
+      component={MutateState}
     />
 
-    <Route exact={true} path="/bad-form" key="/bad-form" component={BadForm} />
     <Route exact={true} path="/form" key="/form" component={Form} />
-    <Route exact={true} path="/better-form" key="/better-form" component={BetterForm} />
 
     <Route exact={true} path="/component" key="/component" component={Component} />
 

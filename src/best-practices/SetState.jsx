@@ -49,14 +49,16 @@ class SetStateGoodCase extends React.Component {
   render() {
     return (
       <div className="App">
-        <span>{this.state.counter}</span>
+        <div>{this.state.counter}</div><br />
         <button onClick={this.handleClick}>Increment</button>
       </div>
     );
   }
 }
 
-export {
-  SetStateBadCase,
-  SetStateGoodCase
-}
+export default () => (
+  <>
+    <SetStateBadCase />
+    <SetStateGoodCase />
+  </>
+)

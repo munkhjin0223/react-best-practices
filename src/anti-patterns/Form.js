@@ -4,14 +4,14 @@ class BadForm extends React.Component {
   onSubmit = e => {
     e.preventDefault();
     
-    console.log('text: ', document.getElementById('text').value);
+    alert(document.getElementById('text').value);
   }
 
   render() {
     return (
       <div className="App">
         <form onSubmit={this.onSubmit}>
-          <input id="text" type="text" />
+          <input id="text" placeholder="getElementById" type="text" />
           <button type="submit">Submit</button>
         </form>
       </div>
@@ -37,14 +37,14 @@ class Form extends React.Component {
   onSubmit = e => {
     e.preventDefault();
     
-    console.log('text: ', this.textInput.current.value);
+    alert(this.textInput.current.value);
   }
 
   render() {
     return (
       <div className="App">
         <form onSubmit={this.onSubmit}>
-          <input ref={this.textInput} onChange={this.onChange} type="text" />
+          <input ref={this.textInput} placeholder="Ref" onChange={this.onChange} type="text" />
           <button type="submit">Submit</button>
         </form>
       </div>
@@ -70,11 +70,13 @@ class BetterForm extends React.Component {
   }
 
   render() {
+    const { text } = this.state;
+    
     return (
       <div className="App">
         <form onSubmit={this.onSubmit}>
-          {this.state.text}
-          <input value={this.state.text} onChange={this.onChange} type="text" />
+          <div>{text}</div>
+          <input value={text} placeholder="State" onChange={this.onChange} type="text" />
           <button type="submit">Submit</button>
         </form>
       </div>
@@ -82,8 +84,10 @@ class BetterForm extends React.Component {
   }
 }
 
-export {
-  BadForm,
-  Form,
-  BetterForm
-}
+export default () => (
+  <>
+    <BadForm />
+    <Form />
+    <BetterForm />
+  </>
+)

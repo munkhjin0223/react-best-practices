@@ -20,34 +20,16 @@ function App() {
       <h3>Best practices</h3>
       <ul>
         <li>
-          <Link to="/setstate-badcase">Set state (bad case)</Link>
+          <Link to="/setstate">Set state</Link>
         </li>
         <li>
-          <Link to="/setstate-goodcase">Set state (good case)</Link>
+          <Link to="/mutatestate">Mutate state</Link>
         </li>
         <li>
-          <Link to="/mutatestate-badcase">Mutate state (bad case)</Link>
-        </li>
-        <li>
-          <Link to="/mutatestate-goodcase">Mutate state (good case)</Link>
-        </li>
-        <li>
-          <Link to="/bad-form">Form (bad case)</Link>
-        </li>
-        <li>
-          <Link to="/form">Form (Not bad case)</Link>
-        </li>
-        <li>
-          <Link to="/better-form">Form (better case)</Link>
+          <Link to="/form">Form field</Link>
         </li>
         <li>
           <Link to="/bind-function">Bind function</Link>
-        </li>
-      </ul>
-      <h3>Performance</h3>
-      <ul>
-        <li>
-          <Link to="/component">Component types</Link>
         </li>
       </ul>
     </div>

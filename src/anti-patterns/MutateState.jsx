@@ -52,7 +52,9 @@ class MutateStateBadCase extends React.Component {
   }
 }
 
-export {
-  MutateStateGoodCase,
-  MutateStateBadCase
-}
+export default () => (
+  <>
+    <MutateStateGoodCase />
+    <MutateStateBadCase />
+  </>
+)
