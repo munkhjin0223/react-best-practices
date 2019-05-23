@@ -6,6 +6,7 @@ import { SetStateBadCase, SetStateGoodCase } from './best-practices/SetState';
 import { MutateStateGoodCase, MutateStateBadCase } from './anti-patterns/MutateState';
 import { Form, BadForm, BetterForm } from './anti-patterns/Form';
 import Component from './performance/Component';
+import BindFunction from './best-practices/BindFunction';
 
 const routes = () => (
   <Router>
@@ -24,7 +25,9 @@ const routes = () => (
     <Route exact={true} path="/better-form" key="/better-form" component={BetterForm} />
 
     <Route exact={true} path="/component" key="/component" component={Component} />
+
+    <Route exact={true} path="/bind-function" key="/bind-function" component={BindFunction} />
   </Router>
-)
+);
 
 export default routes;
