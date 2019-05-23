@@ -25,9 +25,6 @@ function App() {
         <li>
           <Link to="/setstate-goodcase">Set state (good case)</Link>
         </li>
-      </ul>
-      <h3>Anti patterns</h3>
-      <ul>
         <li>
           <Link to="/mutatestate-badcase">Mutate state (bad case)</Link>
         </li>
@@ -42,6 +39,15 @@ function App() {
         </li>
         <li>
           <Link to="/better-form">Form (better case)</Link>
+        </li>
+        <li>
+          <Link to="/bind-function">Bind function</Link>
+        </li>
+      </ul>
+      <h3>Performance</h3>
+      <ul>
+        <li>
+          <Link to="/component">Component types</Link>
         </li>
       </ul>
     </div>

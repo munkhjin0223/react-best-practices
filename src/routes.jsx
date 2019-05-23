@@ -1,10 +1,13 @@
 import * as React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import App from './App';
+import { SetStateBadCase, SetStateGoodCase } from './best-practices/SetState';
+import { MutateStateGoodCase, MutateStateBadCase } from './anti-patterns/MutateState';
+import { Form, BadForm, BetterForm } from './anti-patterns/Form';
+import Component from './performance/Component';
+import BindFunction from './best-practices/BindFunction';
 import { LastStep, StepOne, StepTwo } from "./think-in-react/";
-import App from "./App";
-import { SetStateBadCase, SetStateGoodCase } from "./best-practices/SetState";
-import { MutateStateGoodCase, MutateStateBadCase } from "./anti-patterns/MutateState";
-import { Form, BadForm, BetterForm } from "./anti-patterns/Form";
 
 const routes = () => (
   <Router>
@@ -43,6 +46,10 @@ const routes = () => (
     <Route exact={true} path="/bad-form" key="/bad-form" component={BadForm} />
     <Route exact={true} path="/form" key="/form" component={Form} />
     <Route exact={true} path="/better-form" key="/better-form" component={BetterForm} />
+
+    <Route exact={true} path="/component" key="/component" component={Component} />
+
+    <Route exact={true} path="/bind-function" key="/bind-function" component={BindFunction} />
   </Router>
 );
 
